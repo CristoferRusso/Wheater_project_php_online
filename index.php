@@ -23,17 +23,16 @@
         <form action="index.php">
             <div class="mb-3">
                 <input  class="form-control" id="city" name="city" value="<?=$city?>" placeholder="Eg. London"
-                    style="background-color: rgba(255, 255, 255, 0.6)">
-                <div id="emailHelp" class="form-text"></div>
+                    style="background-color: rgba(255, 255, 255, 0.6)">           
             </div>
             <button type="submit" class="btn btn-primary">Take a see</button>
         
    
      <?php
      //Chiede usando la funzione '?' se c'è un valore dentro alla variabile(se è si verrà stampato success altrimenti danger)
-     $class = $weather? 'success' : 'danger'
+     $class = $weather? 'secondary' : 'danger'
      ?>
-     <div id='result'class="alert alert-<?=$class?>" > 
+     <div id='result'class="alert alert-<?=$class?>"  > 
      <!-- Se c'è un valore dentro alla variabile wheather stampa weather altrimenti stampa il messagio di error  -->
      <?= $weather?$weather:$error?>
      </div>

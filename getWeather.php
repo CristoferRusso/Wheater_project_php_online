@@ -2,7 +2,8 @@
 
 // Funzione che viene eseguita se la variabile $city è vuota
 $city = '';
-$weather ='';
+$weather ='Sun and rain are equally necessary to ripen grapes and talent.
+Friedrich Nietzsche';
 $error ='';
 
 if (!empty($_GET['city'])) {
@@ -16,6 +17,7 @@ $content = @file_get_contents($url);
 
 
 if ($content) {
+    
     //strpos va a leggere un pezzo di stringa all'interno di un'altra stringa con una frase identificativa come '3 days'
     //La stringa in questo caso è $content 
     $ini = strpos($content, '3 days');
@@ -26,9 +28,11 @@ if ($content) {
     $weather = strip_tags(substr($content,$ini +7,$end -$ini));
 
 }else {
-    $error = 'No data found';
+   $weather ='';
+   $error = 'No data found';
 
 }
+
 
 
 }
